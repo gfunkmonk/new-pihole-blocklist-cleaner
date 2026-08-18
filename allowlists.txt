@@ -2,6 +2,7 @@ https://github.com/CubeBeveled/pihole-allowlist/raw/refs/heads/main/adblock/goog
 https://github.com/CubeBeveled/pihole-allowlist/raw/refs/heads/main/adblock/cannon%20printers.txt
 https://github.com/CubeBeveled/pihole-allowlist/raw/refs/heads/main/adblock/twitter.txt
 https://github.com/CubeBeveled/pihole-allowlist/raw/refs/heads/main/adblock/whatsapp.txt
+https://raw.githubusercontent.com/CubeBeveled/pihole-allowlist/refs/heads/main/adblock/facebook%2C%20facebook%20messenger.txt
 https://github.com/peta3000/pihole-lists/raw/refs/heads/main/pihole-allow-list-2025-05-09.txt
 https://github.com/ArwenPaula/pihole-whitelist/raw/refs/heads/main/whitelist.txt
 https://github.com/KaiserStefanI/Pihole-whitelist/raw/refs/heads/main/Pihole-whitelist.txt

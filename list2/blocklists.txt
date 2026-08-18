@@ -5,7 +5,6 @@ https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Core/YouTube/Youtub
 https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Core/YouTube/YoutubeAdblock-3.txt
 https://raw.githack.com/hagezi/dns-blocklists/refs/heads/main/adblock/light.txt
 https://raw.githack.com/shriman-dev/dns-blocklist/refs/heads/main/domains.d/domains-filtered-subdomains00
-https://raw.githubusercontent.com/CubeBeveled/pihole-allowlist/refs/heads/main/adblock/facebook%2C%20facebook%20messenger.txt
 https://www.stopforumspam.com/downloads/toxic_domains_whole.txt
 https://raw.githubusercontent.com/gfunkmonk/hosts/refs/heads/master/hosts1.txt
 https://raw.githack.com/IcedComputer/Personal-Pi-Hole-configs/refs/heads/master/Block_Lists/adHosts.blocklist
