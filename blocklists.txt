@@ -1,0 +1,3 @@
+https://github.com/gfunkmonk/pihole-blocklist-cleaner2/raw/refs/heads/main/blocklist.txt
+https://github.com/gfunkmonk/pihole-blocklist-cleaner/raw/refs/heads/main/blocklist.txt
+
