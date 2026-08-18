@@ -31,7 +31,7 @@ jobs:
 
       - name: Run sanitizer List 2
         run: |
-          cd list1/
+          cd list2/
           chmod +x sanitize_and_commit.sh
           ./sanitize_and_commit.sh
 
