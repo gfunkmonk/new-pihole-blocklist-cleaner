@@ -15,10 +15,10 @@ NC='\033[0m' # No Color
 # 📁 Paths and Filenames
 # ────────────────────────────────────────────────────────────────
 workspace="${GITHUB_WORKSPACE:-$(pwd)}"
-input_file="$workspace/blocklists.txt"
+input_file="$workspace/list2/blocklists.txt"
 date_str=$(date -u +'%Y-%m-%d')
-output_versioned="$workspace/blocklist_${date_str}.txt"
-output_static="$workspace/blocklist.txt"
+output_versioned="$workspace/list2/blocklist_${date_str}.txt"
+output_static="$workspace/list2/blocklist.txt"
 
 echo -e "${BLUE}Starting Pi-hole blocklist update at $(date -u)${NC}"
 echo -e "${BLUE}Reading blocklist URLs from ${input_file}${NC}"
@@ -97,7 +97,7 @@ if [[ -n "$GITHUB_ACTIONS" ]]; then
   # ────────────────────────────────────────────────────────────────
   cutoff=$(date -u -d '2 days ago' +'%Y-%m-%d')
   echo -e "${BLUE}Removing versioned backups older than $cutoff ...${NC}"
-  for f in "$workspace"/blocklist_[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].txt; do
+  for f in "$workspace"/list2/blocklist_[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].txt; do
     [[ -f "$f" ]] || continue
     fname=$(basename "$f")
     file_date="${fname#blocklist_}"
