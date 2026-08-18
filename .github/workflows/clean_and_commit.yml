@@ -14,8 +14,34 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-        with:
-          lfs: true
+
+      - name: Run sanitizer List 1
+        run: |
+          cd list1/
+          chmod +x sanitize_and_commit.sh
+          ./sanitize_and_commit.sh
+
+      - name: Commit and push results List 1
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add list2/blocklist_*.txt
+          git commit -m "Update blocklist $(date -u +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
+
+      - name: Run sanitizer List 2
+        run: |
+          cd list1/
+          chmod +x sanitize_and_commit.sh
+          ./sanitize_and_commit.sh
+
+      - name: Commit and push results List 2
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add list2/blocklist_*.txt
+          git commit -m "Update blocklist $(date -u +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
 
       - name: Run sanitizer
         run: |
@@ -29,4 +55,17 @@ jobs:
           git add blocklist_*.txt
           git commit -m "Update blocklist $(date -u +'%Y-%m-%d')" || echo "No changes to commit"
           git push
+
+      - name: Run sanitizer allowlist
+        run: |
+          chmod +x build_allowlist.sh
+          ./build_allowlist.sh
+
+      - name: Commit and push results allowlist
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add allowlist_*.txt
+          git commit -m "Update allowlist $(date -u +'%Y-%m-%d')" || echo "No changes to commit"
+          git push --force
 
