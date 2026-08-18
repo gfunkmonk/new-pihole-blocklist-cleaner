@@ -17,14 +17,11 @@ NC='\033[0m' # No Color
 workspace="${GITHUB_WORKSPACE:-$(pwd)}"
 input_file="$workspace/allowlists.txt"
 date_str=$(date -u +'%Y-%m-%d')
-output_versioned="$workspace/allowlist_${date_str}.txt"
 output_static="$workspace/allowlist.txt"
 
 echo -e "${BLUE}Starting Pi-hole allowlist update at $(date -u)${NC}"
 echo -e "${BLUE}Reading allowlist URLs from ${input_file}${NC}"
-echo -e "${BLUE}Output will be saved to:${NC}"
-echo -e "${BLUE} - ${output_versioned}${NC}"
-echo -e "${BLUE} - ${output_static}${NC}"
+echo -e "${BLUE}Output will be saved to: ${output_static}${NC}"
 
 if [[ ! -f "$input_file" ]]; then
   echo -e "${RED}ERROR: allowlists.txt not found at $input_file${NC}"
@@ -147,8 +144,7 @@ printf "bit.ly\n" >> "$temp_domains"
 printf "tinyurl.com\n" >> "$temp_domains"
 printf "www.adf.ly\n" >> "$temp_domains"
 
-sort -u "$temp_domains" > "$output_versioned"
-cp "$output_versioned" "$output_static"
+sort -u "$temp_domains" > "$output_static"
 
 count=$(wc -l < "$output_static")
 echo -e "${GREEN}Allowlist update complete: $count domains written.${NC}"
@@ -162,29 +158,13 @@ if [[ -n "$GITHUB_ACTIONS" ]]; then
   git config --global user.email "bot@example.com"
   git config --global user.name "Allowlist Bot"
 
-  git add "$output_static" "$output_versioned"
-
-  # ────────────────────────────────────────────────────────────────
-  # 🗑️ Cleanup old backups (keep only last 3 days)
-  # ────────────────────────────────────────────────────────────────
-  cutoff=$(date -u -d '2 days ago' +'%Y-%m-%d')
-  echo -e "${BLUE}Removing versioned backups older than $cutoff ...${NC}"
-  for f in "$workspace"/allowlist_[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].txt; do
-    [[ -f "$f" ]] || continue
-    fname=$(basename "$f")
-    file_date="${fname#allowlist_}"
-    file_date="${file_date%.txt}"
-    if [[ "$file_date" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] && [[ "$file_date" < "$cutoff" ]]; then
-      echo -e "${YELLOW}Removing old backup: $fname${NC}"
-      git rm "$f"
-    fi
-  done
+  git add "$output_static"
 
   if git diff --cached --quiet; then
     echo -e "${YELLOW}No changes to commit.${NC}"
   else
     git commit -m "Update allowlist on $date_str"
-    git push --force
+    git push
     echo -e "${GREEN}Allowlists committed and pushed.${NC}"
   fi
 fi
