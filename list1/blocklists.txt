@@ -84,3 +84,4 @@ https://raw.githack.com/NoGitHubForYou/yafp/refs/heads/main/domains_malicious
 https://raw.githack.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt
 https://raw.githack.com/ph00lt0/blocklist/refs/heads/master/hosts-blocklist.txt
 https://www.github.developerdan.com/hosts/lists/amp-hosts-extended.txt
+https://github.com/kboghdady/youTube_ads_4_pi-hole/raw/refs/heads/master/youtubelist.txt
