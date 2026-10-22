@@ -82,3 +82,4 @@ https://github.com/vincentkenny01/spotblock/raw/refs/heads/master/spotify
 https://github.com/vincentkenny01/spotblock/raw/refs/heads/master/spotify-26052025
 https://raw.githubusercontent.com/Isaaker/Spotify-AdsList/main/Lists/pi-hole-mixed.txt
 https://github.com/jtbrough/pihole-hosts/raw/refs/heads/main/firebog-ticked-hosts
+https://raw.githubusercontent.com/CaptBV/piholeblocklist/refs/heads/main/blocklist-valid-domains
