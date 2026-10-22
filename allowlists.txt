@@ -33,3 +33,4 @@ https://github.com/stereotypicaldev/whitelist/raw/refs/heads/main/Shorteners/com
 https://github.com/andrewplato/pihole/raw/refs/heads/main/whitelist.txt
 https://raw.githack.com/Loughty/Cisco-Umbrella-Top-1M-PiHole-Whitelist/refs/heads/main/umbrella-top-100k.txt
 https://raw.githack.com/poshsecurity/PI-Hole-AllowList/refs/heads/main/AllowList.txt
+https://github.com/Levi2288/AdvancedBlockList/raw/refs/heads/main/Lists/whitelist.txt
