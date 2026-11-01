@@ -17,7 +17,7 @@ NC='\033[0m' # No Color
 workspace="${GITHUB_WORKSPACE:-$(pwd)}"
 input_file="$workspace/blocklists.txt"
 date_str=$(date -u +'%Y-%m-%d')
-output_static="$workspace/blocklist.txt"
+output_static="$workspace/blocklist.lst"
 
 echo -e "${BLUE}Starting Pi-hole blocklist update at $(date -u)${NC}"
 echo -e "${BLUE}Reading blocklist URLs from ${input_file}${NC}"
