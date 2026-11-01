@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
         with:
-          lfs: true
+          lfs: false
 
       - name: Run sanitizer List 1
         run: |
