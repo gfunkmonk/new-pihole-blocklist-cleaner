@@ -1,2 +1,0 @@
-blocklist.txt filter=lfs diff=lfs merge=lfs -text
-allowlist.txt filter=lfs diff=lfs merge=lfs -text
